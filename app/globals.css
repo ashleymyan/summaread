@@ -4,91 +4,107 @@
 
 @layer base {
   :root {
-    --background: 40 25% 97%;
-    --background-secondary: 40 20% 93%;
-    --foreground: 222 47% 25%;
+    --background: 40 30% 98%;
+    --background-secondary: 40 25% 95%;
+    --foreground: 222 40% 30%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 25%;
+    --card-foreground: 222 40% 30%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 25%;
+    --popover-foreground: 222 40% 30%;
 
-    --primary: 214 72% 40%;
+    --primary: 214 65% 60%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 160 50% 45%;
-    --secondary-foreground: 222 47% 25%;
+    --secondary: 160 45% 65%;
+    --secondary-foreground: 222 40% 30%;
 
     --muted: 210 40% 96.1%;
-    --muted-foreground: 215 16% 47%;
+    --muted-foreground: 215 16% 55%;
 
-    --accent: 180 50% 60%;
-    --accent-foreground: 222 47% 25%;
+    --accent: 180 45% 70%;
+    --accent-foreground: 222 40% 30%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 70% 65%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 214 72% 40%;
+    --border: 214 25% 90%;
+    --input: 214 25% 90%;
+    --ring: 214 65% 60%;
 
     --radius: 0.75rem;
 
-    /* Custom coastal colors */
-    --cobalt-blue: 214 72% 40%;
-    --cobalt-blue-dark: 214 72% 30%;
-    --seafoam-green: 160 50% 45%;
-    --seafoam-green-dark: 160 50% 35%;
+    /* Custom coastal colors - pastel version */
+    --cobalt-blue: 214 65% 60%;
+    --cobalt-blue-dark: 214 65% 50%;
+    --cobalt-blue-light: 214 65% 85%;
+    --seafoam-green: 160 45% 65%;
+    --seafoam-green-dark: 160 45% 55%;
+    --seafoam-green-light: 160 45% 85%;
     --light-blue: 200 70% 95%;
-    --dark-blue: 214 72% 15%;
-    --notes-bg: 214 72% 40%;
+    --dark-blue: 214 65% 20%;
+    --notes-bg: 214 65% 60%;
     --notes-text: 0 0% 100%;
     --note-card-bg: 0 0% 100%;
-    --note-card-text: 222 47% 25%;
+    --note-card-text: 222 40% 30%;
+
+    /* Pink pastel colors */
+    --pink: 330 70% 70%;
+    --pink-dark: 330 70% 60%;
+    --pink-light: 330 70% 90%;
+    --pink-bg: 330 70% 97%;
   }
 
   .dark {
-    --background: 214 50% 10%;
-    --background-secondary: 214 50% 8%;
+    --background: 214 40% 12%;
+    --background-secondary: 214 40% 10%;
     --foreground: 210 40% 98%;
 
-    --card: 214 47% 15%;
+    --card: 214 40% 17%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 214 47% 15%;
+    --popover: 214 40% 17%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 214 72% 50%;
+    --primary: 214 65% 65%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 160 50% 45%;
+    --secondary: 160 45% 60%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 214 33% 17%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 214 33% 20%;
+    --muted-foreground: 215 20.2% 70%;
 
-    --accent: 180 50% 60%;
+    --accent: 180 45% 65%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62.8% 40%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214 33% 25%;
     --input: 214 33% 25%;
-    --ring: 214 72% 50%;
+    --ring: 214 65% 65%;
 
-    /* Custom coastal colors - dark mode */
-    --cobalt-blue: 214 72% 50%;
-    --cobalt-blue-dark: 214 72% 40%;
-    --seafoam-green: 160 50% 40%;
-    --seafoam-green-dark: 160 50% 30%;
+    /* Custom coastal colors - dark mode pastel */
+    --cobalt-blue: 214 65% 65%;
+    --cobalt-blue-dark: 214 65% 55%;
+    --cobalt-blue-light: 214 40% 30%;
+    --seafoam-green: 160 45% 55%;
+    --seafoam-green-dark: 160 45% 45%;
+    --seafoam-green-light: 160 30% 30%;
     --light-blue: 214 30% 25%;
-    --dark-blue: 214 72% 5%;
-    --notes-bg: 214 72% 25%;
+    --dark-blue: 214 65% 8%;
+    --notes-bg: 214 65% 30%;
     --notes-text: 0 0% 100%;
-    --note-card-bg: 214 47% 20%;
+    --note-card-bg: 214 40% 22%;
     --note-card-text: 210 40% 98%;
+
+    /* Pink pastel colors - dark mode */
+    --pink: 330 70% 65%;
+    --pink-dark: 330 70% 55%;
+    --pink-light: 330 40% 40%;
+    --pink-bg: 330 40% 20%;
   }
 }
 
@@ -118,19 +134,19 @@ body {
 @keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 0 0 rgba(var(--secondary), 0.7);
+    box-shadow: 0 0 0 0 rgba(var(--pink), 0.7);
   }
   50% {
-    box-shadow: 0 0 0 10px rgba(var(--secondary), 0);
+    box-shadow: 0 0 0 10px rgba(var(--pink), 0);
   }
 }
 
 .coastal-pattern {
-  @apply bg-[url("data:image/svg+xml,%3Csvg%20width%3D'60'%20height%3D'60'%20viewBox%3D'0%200%2060%2060'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20fill%3D'none'%20fill-rule%3D'evenodd'%3E%3Cg%20fill%3D'%231e62ab'%20fill-opacity%3D'0.05'%3E%3Cpath%20d%3D'M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")];
+  @apply bg-[url("data:image/svg+xml,%3Csvg%20width%3D'60'%20height%3D'60'%20viewBox%3D'0%200%2060%2060'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20fill%3D'none'%20fill-rule%3D'evenodd'%3E%3Cg%20fill%3D'%235b91d5'%20fill-opacity%3D'0.1'%3E%3Cpath%20d%3D'M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")];
 }
 
 .dark .coastal-pattern {
-  @apply bg-[url("data:image/svg+xml,%3Csvg%20width%3D'60'%20height%3D'60'%20viewBox%3D'0%200%2060%2060'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20fill%3D'none'%20fill-rule%3D'evenodd'%3E%3Cg%20fill%3D'%233b82f6'%20fill-opacity%3D'0.1'%3E%3Cpath%20d%3D'M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")];
+  @apply bg-[url("data:image/svg+xml,%3Csvg%20width%3D'60'%20height%3D'60'%20viewBox%3D'0%200%2060%2060'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20fill%3D'none'%20fill-rule%3D'evenodd'%3E%3Cg%20fill%3D'%235b91d5'%20fill-opacity%3D'0.15'%3E%3Cpath%20d%3D'M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")];
 }
 
 /* Notes panel styles */
@@ -145,6 +161,7 @@ body {
   max-width: 768px;
   margin: 0 auto;
   transition: transform 0.3s ease;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .notes-handle {
@@ -155,26 +172,37 @@ body {
 .note-card {
   background-color: hsl(var(--note-card-bg));
   color: hsl(var(--note-card-text));
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   padding: 1rem;
   margin-bottom: 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.note-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.note-card.favorite {
+  border-left: 3px solid hsl(var(--pink));
 }
 
 .highlight-text {
-  background-color: hsl(var(--secondary) / 30%);
-  border-radius: 0.25rem;
+  background-color: hsl(var(--pink-light) / 30%);
+  border-radius: 0.5rem;
   font-style: italic;
   padding: 0.5rem;
   margin-bottom: 0.5rem;
   font-size: 0.875rem;
+  border-left: 2px solid hsl(var(--pink));
 }
 
 .coastal-button {
   background-color: hsl(var(--cobalt-blue));
   color: white;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   padding: 0.5rem 1rem;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -182,15 +210,17 @@ body {
 
 .coastal-button:hover {
   background-color: hsl(var(--cobalt-blue-dark));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .coastal-button-secondary {
-  background-color: hsl(var(--seafoam-green));
+  background-color: hsl(var(--pink));
   color: white;
 }
 
 .coastal-button-secondary:hover {
-  background-color: hsl(var(--seafoam-green-dark));
+  background-color: hsl(var(--pink-dark));
 }
 
 /* Main content container that will shift when notes panel is open */
@@ -205,5 +235,34 @@ body {
   transform: translateY(-70vh);
   height: 70vh;
   overflow: hidden;
+}
+
+/* Pink accent styles */
+.pink-accent {
+  color: hsl(var(--pink));
+}
+
+.pink-bg {
+  background-color: hsl(var(--pink-bg));
+}
+
+.pink-border {
+  border-color: hsl(var(--pink));
+}
+
+.pink-highlight {
+  background-color: hsl(var(--pink-light) / 30%);
+}
+
+/* Pastel card styles */
+.pastel-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.pastel-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 

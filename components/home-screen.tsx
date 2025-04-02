@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Book, ChevronLeft, ChevronRight, Plus, Settings, User } from "lucide-react"
+import { Book, ChevronLeft, ChevronRight, Plus, Settings, User, Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
@@ -17,6 +17,7 @@ const books = [
     id: 1,
     title: "John's Origins",
     subtitle: "Book 1",
+    favorite: false,
     lastChapter: {
       number: 11,
       title: "John died",
@@ -28,6 +29,7 @@ const books = [
     id: 2,
     title: "John Returns",
     subtitle: "Book 2",
+    favorite: false,
     lastChapter: {
       number: 7,
       title: "John came back to life",
@@ -39,6 +41,7 @@ const books = [
     id: 3,
     title: "John's Demise?",
     subtitle: "Book 3",
+    favorite: false,
     lastChapter: {
       number: 4,
       title: "John died again",
@@ -50,6 +53,7 @@ const books = [
     id: 4,
     title: "John's Son",
     subtitle: "Book 4",
+    favorite: false,
     lastChapter: {
       number: 2,
       title: "John's son, Johnny",
@@ -100,16 +104,16 @@ export function HomeScreen() {
       className="min-h-screen bg-background text-foreground max-w-[768px] mx-auto relative"
       style={{ height: "1024px", width: "768px" }}
     >
-      <div className="absolute inset-0 coastal-pattern opacity-[0.05] pointer-events-none z-0"></div>
+      <div className="absolute inset-0 coastal-pattern opacity-[0.08] pointer-events-none z-0"></div>
 
-      {/* Header with welcome message - watermark removed */}
+      {/* Header with welcome message */}
       <header className="p-8 pb-2 relative z-10">
         <h1 className="text-3xl font-serif text-[hsl(var(--primary))] tracking-wide">Welcome back</h1>
       </header>
 
       {/* Reading stats */}
       <section className="p-8 pt-4 relative z-10">
-        <Card className="p-6 border-border shadow-sm bg-card rounded-xl">
+        <Card className="p-6 border-border shadow-sm bg-card rounded-xl pastel-card">
           <div className="flex justify-between items-center mb-5">
             <div className="text-sm text-[hsl(var(--muted-foreground))] font-medium">This session, you've read:</div>
             <div className="text-sm text-[hsl(var(--muted-foreground))] font-medium">Goal:</div>
@@ -117,13 +121,13 @@ export function HomeScreen() {
 
           <div className="flex justify-between mb-5">
             <div className="flex space-x-4">
-              <div className="bg-[hsl(var(--accent))/10] px-4 py-3 rounded-lg text-[hsl(var(--primary))] font-serif">
+              <div className="bg-[hsl(var(--cobalt-blue-light)/30%)] px-4 py-3 rounded-lg text-[hsl(var(--primary))] font-serif">
                 {readingStats.minutes} min
               </div>
-              <div className="bg-[hsl(var(--accent))/10] px-4 py-3 rounded-lg text-[hsl(var(--primary))] font-serif">
+              <div className="bg-[hsl(var(--seafoam-green-light)/30%)] px-4 py-3 rounded-lg text-[hsl(var(--primary))] font-serif">
                 {readingStats.pages} pgs
               </div>
-              <div className="bg-[hsl(var(--accent))/10] px-4 py-3 rounded-lg text-[hsl(var(--primary))] font-serif">
+              <div className="bg-[hsl(var(--pink-light)/30%)] px-4 py-3 rounded-lg text-[hsl(var(--primary))] font-serif">
                 {readingStats.chapters} chapters
               </div>
             </div>
@@ -136,9 +140,9 @@ export function HomeScreen() {
             <Progress
               value={readingStats.progress}
               className="flex-1 h-3 bg-[hsl(var(--muted))]"
-              indicatorClassName="bg-[hsl(var(--secondary))]"
+              indicatorClassName="bg-gradient-to-r from-[hsl(var(--cobalt-blue))] to-[hsl(var(--pink))]"
             />
-            <span className="ml-3 text-sm text-[hsl(var(--primary))] font-medium">{readingStats.progress}%</span>
+            <span className="ml-3 text-sm text-[hsl(var(--pink))] font-medium">{readingStats.progress}%</span>
           </div>
         </Card>
       </section>
@@ -167,9 +171,16 @@ export function HomeScreen() {
               {books.map((book) => (
                 <div key={book.id} className="w-1/3 flex-shrink-0 pr-4">
                   <Card
-                    className="p-5 h-56 flex flex-col justify-between border-border cursor-pointer hover:border-[hsl(var(--secondary))] transition-colors bg-card rounded-xl"
+                    className={`p-5 h-56 flex flex-col justify-between border-border cursor-pointer hover:border-[hsl(var(--secondary))] transition-colors bg-card rounded-xl pastel-card ${
+                      book.favorite ? "border-t-2 border-t-[hsl(var(--pink))]" : ""
+                    }`}
                     onClick={() => (window.location.href = `/read/${book.id}`)}
                   >
+                    {book.favorite && (
+                      <div className="absolute top-2 right-2">
+                        <Heart className="h-4 w-4 fill-[hsl(var(--pink))] text-[hsl(var(--pink))]" />
+                      </div>
+                    )}
                     <div className="flex justify-center">
                       <div className="w-16 h-20 bg-[hsl(var(--accent))/10] rounded-sm flex items-center justify-center border-b-2 border-r-2 border-border">
                         <Book className="text-[hsl(var(--primary))] h-8 w-8" />
@@ -212,7 +223,7 @@ export function HomeScreen() {
       {/* Upload button */}
       <section className="px-8 mb-8 relative z-10">
         <Button
-          className="w-full bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary))/90] text-[hsl(var(--primary-foreground))] font-serif py-6 rounded-xl"
+          className="w-full bg-gradient-to-r from-[hsl(var(--cobalt-blue))] to-[hsl(var(--pink))] hover:opacity-90 text-[hsl(var(--primary-foreground))] font-serif py-6 rounded-xl shadow-md"
           onClick={() => setShowUploadModal(true)}
         >
           <Plus className="mr-2 h-5 w-5" /> Upload
@@ -232,7 +243,7 @@ export function HomeScreen() {
         <Button
           variant="ghost"
           size="icon"
-          className="text-[hsl(var(--primary))] hover:text-[hsl(var(--primary))/90] hover:bg-[hsl(var(--accent))/10] h-12 w-12 rounded-full"
+          className="text-[hsl(var(--pink))] hover:text-[hsl(var(--pink))/90] hover:bg-[hsl(var(--pink-light))/30%] h-12 w-12 rounded-full"
           onClick={() => setShowProfileModal(true)}
         >
           <User className="h-6 w-6" />
