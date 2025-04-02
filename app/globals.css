@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 25% 97%;
+    --background-secondary: 40 20% 93%;
+    --foreground: 222 47% 25%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 25%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 25%;
+
+    --primary: 214 72% 40%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 160 50% 45%;
+    --secondary-foreground: 222 47% 25%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 180 50% 60%;
+    --accent-foreground: 222 47% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 214 72% 40%;
+
+    --radius: 0.75rem;
+
+    /* Custom coastal colors */
+    --cobalt-blue: 214 72% 40%;
+    --cobalt-blue-dark: 214 72% 30%;
+    --seafoam-green: 160 50% 45%;
+    --seafoam-green-dark: 160 50% 35%;
+    --light-blue: 200 70% 95%;
+    --dark-blue: 214 72% 15%;
+    --notes-bg: 214 72% 40%;
+    --notes-text: 0 0% 100%;
+    --note-card-bg: 0 0% 100%;
+    --note-card-text: 222 47% 25%;
+  }
+
+  .dark {
+    --background: 214 50% 10%;
+    --background-secondary: 214 50% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 214 47% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 214 47% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 214 72% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 160 50% 45%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 214 33% 17%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 180 50% 60%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214 33% 25%;
+    --input: 214 33% 25%;
+    --ring: 214 72% 50%;
+
+    /* Custom coastal colors - dark mode */
+    --cobalt-blue: 214 72% 50%;
+    --cobalt-blue-dark: 214 72% 40%;
+    --seafoam-green: 160 50% 40%;
+    --seafoam-green-dark: 160 50% 30%;
+    --light-blue: 214 30% 25%;
+    --dark-blue: 214 72% 5%;
+    --notes-bg: 214 72% 25%;
+    --notes-text: 0 0% 100%;
+    --note-card-bg: 214 47% 20%;
+    --note-card-text: 210 40% 98%;
+  }
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.highlight-pulse {
+  animation: pulse 1s ease-in-out;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(var(--secondary), 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(var(--secondary), 0);
+  }
+}
+
+.coastal-pattern {
+  @apply bg-[url("data:image/svg+xml,%3Csvg%20width%3D'60'%20height%3D'60'%20viewBox%3D'0%200%2060%2060'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20fill%3D'none'%20fill-rule%3D'evenodd'%3E%3Cg%20fill%3D'%231e62ab'%20fill-opacity%3D'0.05'%3E%3Cpath%20d%3D'M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")];
+}
+
+.dark .coastal-pattern {
+  @apply bg-[url("data:image/svg+xml,%3Csvg%20width%3D'60'%20height%3D'60'%20viewBox%3D'0%200%2060%2060'%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%3E%3Cg%20fill%3D'none'%20fill-rule%3D'evenodd'%3E%3Cg%20fill%3D'%233b82f6'%20fill-opacity%3D'0.1'%3E%3Cpath%20d%3D'M36%2034v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6%2034v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6%204V0H4v4H0v2h4v4h2V6h4V4H6z'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E")];
+}
+
+/* Notes panel styles */
+.notes-panel {
+  background-color: hsl(var(--notes-bg));
+  color: hsl(var(--notes-text));
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  max-width: 768px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.notes-handle {
+  background-color: hsl(var(--notes-bg));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.note-card {
+  background-color: hsl(var(--note-card-bg));
+  color: hsl(var(--note-card-text));
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.highlight-text {
+  background-color: hsl(var(--secondary) / 30%);
+  border-radius: 0.25rem;
+  font-style: italic;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+}
+
+.coastal-button {
+  background-color: hsl(var(--cobalt-blue));
+  color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.coastal-button:hover {
+  background-color: hsl(var(--cobalt-blue-dark));
+}
+
+.coastal-button-secondary {
+  background-color: hsl(var(--seafoam-green));
+  color: white;
+}
+
+.coastal-button-secondary:hover {
+  background-color: hsl(var(--seafoam-green-dark));
+}
+
+/* Main content container that will shift when notes panel is open */
+.main-content {
+  transition: transform 0.3s ease, height 0.3s ease;
+  min-height: 100vh;
+  position: relative;
+  z-index: 10;
+}
+
+.main-content.notes-open {
+  transform: translateY(-70vh);
+  height: 70vh;
+  overflow: hidden;
+}
+
